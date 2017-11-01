@@ -3,44 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>CheckMate</title>
+    <meta name="application-name" content="Check Mate">
+    <meta name="description" content="An application to manage To Do's">
+    <meta name="author" content="Filipe Lemos, Ricardo Ferreira">
+    <meta name="keywords" content="ToDo, Management, Organization, Categories">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
     <header>
-        <img src="checkmate-logos.png" alt="Logo">
-        <label for="login">Log In</label>
-        <input type="checkbox" id="login">
-        <label for="try">Try before sign up</label>
-        <input type="checkbox" id="try">
+        <img src="images/logo-check-mate.png" alt="Logo" width="188" height="71">
+        <a class='log-in'href="#">Log In</a>
+        <a class='try-it' href="#">Try Before Sign Up</a>
     </header>
 
-    <h1>Organize your day one To Do at a time</h1>
-    <p>Create and organize your to do's from anywhere in the world</p>
+   <!-- <div class="container"> -->
 
-    <aside id="signup">
-        <h2>Sign Up for Free</h2>
-        <label for="username"></label>
-        <input type="text" name="username" value="username or email" id="username"><br>
-        <label for="password"></label>
-        <input type="text" name="password" value="password" id="password"><br>
-        <input type="submit" value="Sign Up">
-    </aside>
+        <section id="app-promo">
+            <h1>Organize your day one To Do at a time</h1>
+            <p>Create and organize your to do's from anywhere in the world.</p>
+        </section>
+
+        <div class="wrapper-divider">
+            <div class="divider"></div>
+        </div>
+
+        <section id="sign-up">
+            <h2>Sign Up for Free</h2>
+            <form action="#" method="post">
+                <!-- <label for="username"></label> -->
+                <input type="text" name="username" placeholder="username or email" id="username" required="required"><br>
+                <!-- <label for="password"></label> -->
+                <input type="password" name="password" placeholder="password" id="password" required="required"><br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </section>
+   <!-- </div> -->
 
     <footer>
-        <p>&copy;2017 All rights reserved</p>
-        <label for="country">Choose a language: </label>
-        <select name="country" id="country">
-            <label for="eng"></label>
-            <option value="eng" id="eng">English (GB)</option>
-            <label for="pt"></label>
-            <option value="pt" id="pt">Portuguese</option>
-            <label for="esp"></label>
-            <option value="esp" id="esp">Spanish</option>
-            <label for="ita"></label>
-            <option value="ita" id="ita">Italian</option>
-            <label for="ger"></label>
-            <option value="ger" id="ger">German</option>
-        </select>
+        <p>&copy; 2017 All rights reserved</p>
+        <div class="choose-lang">
+            <label for="country">Choose a language: </label>
+            <select name="country" id="country">
+                <option value="eng" id="eng">English (GB)</option>
+                <option value="pt" id="pt">Portuguese</option>
+                <option value="esp" id="esp">Spanish</option>
+                <option value="ita" id="ita">Italian</option>
+                <option value="ger" id="ger">German</option>
+            </select>
+        </div>
     </footer>
 </body>
 </html>
