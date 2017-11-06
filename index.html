@@ -8,6 +8,7 @@
     <meta name="author" content="Filipe Lemos, Ricardo Ferreira">
     <meta name="keywords" content="ToDo, Management, Organization, Categories">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -15,14 +16,18 @@
 
     <header>
         <img src="images/logo-check-mate.png" alt="Logo" width="188" height="71">
-        <a class='log-in'href="#">Log In</a>
+        <a class='log-in' href="#">Log In</a>
         <a class='try-it' href="#">Try Before Sign Up</a>
     </header>
 
    <!-- <div class="container"> -->
 
         <section id="app-promo">
-            <h1>Organize your day one To Do at a time</h1>
+            <div class="promo-slogans">
+                <h1>Organize your day one To Do at a time</h1>
+                <h1 class="hidden-slogan">Simplify your tasks.</h1>
+                <h1 class="hidden-slogan">Make your routines funny.</h1>
+            </div>
             <p>Create and organize your to do's from anywhere in the world.</p>
         </section>
 
@@ -32,11 +37,23 @@
 
         <section id="sign-up">
             <h2>Sign Up for Free</h2>
-            <form action="#" method="post">
+            <form action="signup.php" method="post">
                 <!-- <label for="username"></label> -->
-                <input type="text" name="username" placeholder="username or email" id="username" required="required"><br>
+                <input type="text" name="username" placeholder="username or email" id="username" required="required"><span class="fa fa-check usercheck" aria-hidden="true"></span><i class="fa fa-times usernotcheck" aria-hidden="true"></i><br>
+                <ul class="checkuser">
+                    <li></li>
+                </ul>
                 <!-- <label for="password"></label> -->
-                <input type="password" name="password" placeholder="password" id="password" required="required"><br>
+                <input type="password" name="password" placeholder="password" id="password" required="required"><span class="fa fa-check passcheck" aria-hidden="true"></span><i class="fa fa-times passnotcheck" aria-hidden="true"></i><br>
+                <div class="checkpassword">
+                    <h4>Your password must have:</h4>
+                    <ul>
+                        <li class="first-rule">At least 8 characters <span class="fa fa-check" aria-hidden="true"></span></li>
+                        <li class="second-rule">At least 1 number <span class="fa fa-check" aria-hidden="true"></span></li>
+                        <li class="third-rule">At least 1 capital and 1 small letter <span class="fa fa-check" aria-hidden="true"></span></li>
+                        <li class="forth-rule">At least 1 special character <span class="fa fa-check" aria-hidden="true"></span></li>
+                    </ul>
+                </div>
                 <input type="submit" value="Sign Up">
             </form>
         </section>
@@ -55,5 +72,8 @@
             </select>
         </div>
     </footer>
+
+    <script src="js/homepage.js"></script>
+
 </body>
 </html>

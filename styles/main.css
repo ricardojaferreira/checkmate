@@ -25,6 +25,15 @@ h2{
     font-size: 2.62em;
 }
 
+h3{
+    font-size: 1.84em;
+}
+
+h4{
+    font-size: 1.29em;
+    margin: 0.8em 0;
+}
+
 body > header{
     height: 6.19em;
     grid-column: left / right;
@@ -60,11 +69,23 @@ header a.try-it{
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    /*justify-content: center;*/
 }
 
-#app-promo h1{
+.promo-slogans{
+   position: relative;
+}
+
+.promo-slogans > h1.hidden-slogan{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top:0;
+    opacity:0;
+}
+
+.promo-slogans > h1{
     margin-bottom: 1.0em;
+    opacity: 1;
 }
 
 #app-promo p{
@@ -117,6 +138,38 @@ header a.try-it{
     background-color: #efc319;
     border-radius: 5px; /* See compatibility with older browsers */
     padding:0.6em 0.6em;
+}
+
+.usercheck, .passcheck{
+    color: green; /*change color*/
+    font-size: 1.3em;
+    display: none;
+}
+
+.usernotcheck, .passnotcheck{
+    color: red; /*change color*/
+    font-size: 1.3em;
+    display: none;
+}
+
+.checkuser li{
+    display: none;
+    color: red; /*change color*/
+    margin: 1em 0 0 2em;
+}
+
+.checkpassword{
+    color: #666666;
+    display: none;
+}
+
+.checkpassword ul > li{
+    margin-left: 2em;
+}
+
+.checkpassword ul li > span{
+    color: green; /*change color*/
+    display: none;
 }
 
 body > footer{
