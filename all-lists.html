@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckMate</title>
+    <meta name="application-name" content="Check Mate">
+    <meta name="description" content="An application to manage To Do's">
+    <meta name="author" content="Filipe Lemos, Ricardo Ferreira">
+    <meta name="keywords" content="ToDo, Management, Organization, Categories">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+    <img src="images/logo-check-mate.png" alt="Logo" width="188" height="71">
+    <select name="gotolist" id="gotolist">
+        <option value="default" id="default">Go to List</option>
+        <option value="list1" id="list1">List 1</option>
+        <option value="list2" id="list2">List</option>
+    </select>
+    <a class='log-out'href="index.html">Log Out</a>
+    <a class='search' href="#">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </a>
+    <a class='settings' href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </a>
+</header>
+
+<!-- <div class="container"> -->
+
+<section id="all-lists">
+    <h1>All Lists</h1>
+    <select name="sortby" id="sortby">
+        <option value="defaultsort" id="defaultsort">Sort By</option>
+        <option value="name" id="name">Name</option>
+        <option value="deadline" id="deadline">Deadline</option>
+        <option value="priority" id="priority">Priority</option>
+    </select>
+    <article>
+        <a class='pencil' href="list.html">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Donec in sagittis lacus. Proin dapibus sagittis finibus.</p>
+        <p>100%</p>
+        <a class='trash' href="#">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </a>
+    </article>
+    <article>
+        <a class='pencil' href="list.html">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Donec in sagittis lacus. Proin dapibus sagittis finibus.</p>
+        <p>850%</p>
+        <a class='trash' href="#">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </a>
+    </article>
+</section>
+
+
+
+
+<!-- </div> -->
+
+<footer>
+    <p>&copy; 2017 All rights reserved</p>
+    <div class="choose-lang">
+        <label for="country">Choose a language: </label>
+        <select name="country" id="country">
+            <option value="eng" id="eng">English (GB)</option>
+            <option value="pt" id="pt">Portuguese</option>
+            <option value="esp" id="esp">Spanish</option>
+            <option value="ita" id="ita">Italian</option>
+            <option value="ger" id="ger">German</option>
+        </select>
+    </div>
+</footer>
+</body>
+</html>
