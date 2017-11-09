@@ -74,7 +74,6 @@ var notAllowedSymbols = /[!#$%^&*()?\/+"'=]+/;
 var detectArroba = /@/;
 
 userInput.addEventListener('focus',function () {
-    checkUserValue();
     if(userChecker.textContent!='') {
         userChecker.style.display = 'list-item';
     }else{
