@@ -16,7 +16,7 @@
 
 <header>
     <img src="images/logo-check-mate.png" alt="Logo" width="188" height="71">
-    <a class='log-out'href="index.html">Log Out</a>
+    <a class='log-out'href="index.php">Log Out</a>
     <!-- <a class='search' href="#">
         <i class="fa fa-search" aria-hidden="true"></i>
     </a> NOTA: Ainda não existem listas!-->
