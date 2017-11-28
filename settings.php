@@ -29,39 +29,36 @@
 
    <!-- <div class="container"> -->
 
-  <section id="settings">
-      <h2>Your Profile</h2>
-      <form>
-          <label class='settingsHeaders'>Name:</label><br>
-          <input type="text" name="name"  id="name"><br>
-          <label class='settingsHeaders'>Would you like to change your username?</label><br>
-          <input type="text" name="username"  id="changeUsername"><br>
-          <label class='settingsHeaders'>Would you like to change your Password?</label><br>
-          <input type="password" name="currentPassword" placeholder="current password" id="currentPassword"><br>
-          <label class='settingsHeaders'>New password:</label><br>
-          <input type="password" name="newPassword"  id="newPassword"><br>
-          <label class='settingsHeaders'>Confirm new password:</label><br>
-          <input type="password" name="newConfirmedPassword" id="newConfirmedPassword"><br>
-          <label class='settingsHeaders'>Bio</label><br>
-          <textarea rows="4" cols="50" placeholder="Tell us something about yourself" id="bio"></textarea><br>
-          <label class='settingsHeaders'>Mobile phone:</label><br>
-          <input type="text" name="phone" id="phone"><br>
-          <label class='settingsHeaders'>Address:</label><br>
-          <input type="text" name="address" id="address"><br>
+    <div id="user-settings">
+        <h2>Your Profile</h2>
 
-          <!--<div class="checkpassword">
-              <h4>Your password must have:</h4>
-              <ul>
-                  <li class="first-rule">At least 8 characters <span class="fa fa-check" aria-hidden="true"></span></li>
-                  <li class="second-rule">At least 1 number <span class="fa fa-check" aria-hidden="true"></span></li>
-                  <li class="third-rule">At least 1 capital and 1 small letter <span class="fa fa-check" aria-hidden="true"></span></li>
-                  <li class="forth-rule">At least 1 special character <span class="fa fa-check" aria-hidden="true"></span></li>
-              </ul>
-          </div>-->
-          <input type="submit" value="Save Changes">
-      </form>
-  </section>
-   <!-- </div> -->
+        <section id="profilepic">
+            <img src="images/profile_pics/default_avatar.jpeg" alt="default_avatar" width="200" height="200">
+            <button>Upload Photo</button>
+        </section>
+
+        <section id="settings">
+            <form>
+                <label class='settingsHeaders'>Name:</label><br>
+                <input type="text" name="name"  id="name"><br>
+                <label class='settingsHeaders'>Would you like to change your username?</label><br>
+                <input type="text" name="username"  id="changeUsername"><br>
+                <label class='settingsHeaders'>Would you like to change your Password?</label><br>
+                <input type="password" name="currentPassword" placeholder="current password" id="currentPassword"><br>
+                <label class='settingsHeaders'>New password:</label><br>
+                <input type="password" name="newPassword"  id="newPassword"><br>
+                <label class='settingsHeaders'>Confirm new password:</label><br>
+                <input type="password" name="newConfirmedPassword" id="newConfirmedPassword"><br>
+                <label class='settingsHeaders'>Bio</label><br>
+                <textarea rows="4" cols="50" placeholder="Tell us something about yourself" id="bio"></textarea><br>
+                <label class='settingsHeaders'>Mobile phone:</label><br>
+                <input type="text" name="phone" id="phone"><br>
+                <label class='settingsHeaders'>Address:</label><br>
+                <input type="text" name="address" id="address"><br>
+                <input type="submit" value="Save Changes">
+            </form>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2017 All rights reserved</p>

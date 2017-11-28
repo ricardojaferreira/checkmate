@@ -266,3 +266,73 @@ footer select{
     font-weight: bold;
     font-size: 1.1em;
 }
+
+/*settings page*/
+
+.user-settings{
+    grid-column: left / right;
+    grid-row: header-end / content-end;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+#profilepic{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#settings{
+    margin-right: 1.7em;
+    padding-top: 2.00em;
+}
+
+#settings form input[type=text], #settings form input[type="password"]{
+    width: 19em;
+    margin-top: 0em;
+    margin-bottom: 1.3em;
+    font-size: 1em;
+    width: 95%;
+    border: 1px solid #f4f0f5;
+    color: #000000;
+    background-color: #f4f0f5;
+    border-radius: 5px; /* See compatibility with older browsers */
+    padding:0.6em 0.6em;
+}
+
+#settings form input[type=submit]{
+    width: 19em;
+    margin-top: 0.5em;
+    font-size: 1.3em;
+    width: 95%;
+    font-weight: bold;
+    border: 1px solid #f4f0f5;
+    color: #ffffff;
+    background-color: #efc319;
+    border-radius: 5px; /* See compatibility with older browsers */
+    padding:0.6em 0.6em;
+}
+
+
+#bio{
+    width: 19em;
+    margin-top: 0em;
+    margin-bottom: 1.3em;
+    font-size: 1em;
+    width: 95%;
+    border: 1px solid #f4f0f5;
+    color: #000000;
+    background-color: #f4f0f5;
+    border-radius: 5px; /* See compatibility with older browsers */
+    padding:0.6em 0.6em;
+}
+
+#settings h2{
+    margin-bottom: 1.3em;
+}
+
+.settingsHeaders{
+    font-size: 1.5em;
+}
