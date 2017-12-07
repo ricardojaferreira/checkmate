@@ -1,6 +1,6 @@
 <header>
     <a href="/index.php"><img src="images/logo-check-mate.png" alt="Logo" width="188" height="71"></a>
-    <?php if($_SERVER['PHP_SELF']=='/index.php'){
+    <?php if(strpos($_SERVER['PHP_SELF'],'/index.php')!==false){
         if(isset($_SESSION['username'])){?>
             <select name="categories" id="categories">
                 <option value="nocard">Select One Category</option>
@@ -25,7 +25,7 @@
             <a class='try-it' href="#">Try Before Sign Up</a>
         </div>
     <?php }}?>
-    <?php if($_SERVER['PHP_SELF']=='/login.php'){
+    <?php if(strpos($_SERVER['PHP_SELF'],'/login.php')!==false){
         if(isset($_SESSION['username'])){?>
             <select name="categories" id="categories">
                 <option value="nocard">Select One Category</option>
@@ -45,7 +45,7 @@
                 </a>
             </div>
     <?php }}?>
-    <?php if($_SERVER['PHP_SELF']=='/settings.php'){ ?>
+    <?php if(strpos($_SERVER['PHP_SELF'],'/settings.php')!==false){ ?>
         <select name="categories" id="categories">
             <option value="nocard">Select One Category</option>
             <?php
