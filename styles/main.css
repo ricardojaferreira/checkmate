@@ -31,6 +31,10 @@ h4{
     color: red;
 }
 
+a.remember{
+    color: blue;
+}
+
 /*all pages*/
 body{
     width: 1220px;
@@ -50,27 +54,38 @@ body > header{
     grid-column: left / right;
     grid-row: top / header-end;
     display: flex; /* See compatibility and uses on older browsers */
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px #666666;
 }
 
 /*all pages*/
 header img{
-    margin-right: auto;
+    /*margin-right: auto;*/
     margin-left: 1.7em;
 }
 
+header select{
+    font-size: 1.3em;
+    border: none;
+    background-color: transparent;
+}
+
 /*all pages*/
-header > a{
+header a{
     color: #000000;
     font-size: 1.3em;
 }
 
+header .header-left{
+    margin-right: 1.3em;
+}
 
 /*homepage*/
 header a.try-it{
     background-color: #efc319;
-    margin-right: 1.3em;
     margin-left: 1.7em;
     padding: 0.625em;
     border-radius: 10px; /*See compatibility with older browsers*/
@@ -203,6 +218,42 @@ header a.try-it{
     display: none;
 }
 
+/*LOG IN PAGE*/
+#log-in{
+    grid-column: left / right;
+    grid-row: header-end / content-end;
+    margin-right: 1.7em;
+    padding-top: 4.00em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*LOG IN*/
+#log-in form input[type=text], #log-in form input[type=password]{
+    width: 19em;
+    margin-top: 1.6em;
+    font-size: 1.3em;
+    border: 1px solid #f4f0f5;
+    color: #000000;
+    background-color: #f4f0f5;
+    border-radius: 5px; /* See compatibility with older browsers */
+    padding:0.6em 0.6em;
+}
+
+/*Log IN*/
+#log-in form input[type=submit]{
+    width: 19em;
+    margin-top: 1.6em;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 1px solid #f4f0f5;
+    color: #ffffff;
+    background-color: #efc319;
+    border-radius: 5px; /* See compatibility with older browsers */
+    padding:0.6em 0.6em;
+}
+
 /*no lists page*/
 #nolists{
     grid-column: left / right;
@@ -249,7 +300,7 @@ footer{
     margin-top: 3em;
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -268,71 +319,177 @@ footer select{
 }
 
 /*settings page*/
-
-.user-settings{
+.wrapper-user-settings {
     grid-column: left / right;
     grid-row: header-end / content-end;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
+    z-index: 1;
 }
 
-#profilepic{
+#user-settings{
+    width: 50em;
+    margin: 0 auto;
+    display: grid; /* See compatibility and uses on older browsers */
+    grid-template-columns: [a] 4fr [b] 4fr [c];
+    grid-template-rows: [d] 0.5fr [e] 4fr [f];
+}
+
+#user-settings h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    grid-column: a / c;
+    grid-row: d / e;
+}
+
+#userDetails{
+    grid-column: a / b;
+    grid-row: e / f;
     display: flex;
     flex-direction: column;
-
+    align-items: flex-end;
+    margin-right: 2em;
+    text-align: right;
 }
 
-#settings{
-    margin-right: 1.7em;
-    padding-top: 2.00em;
+#userDetails .profilePicZone{
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
-#settings form input[type=text], #settings form input[type="password"]{
-    width: 19em;
-    margin-top: 0em;
-    margin-bottom: 1.3em;
-    font-size: 1em;
-    width: 95%;
+#userDetails .profilePicZone .dragBox{
+    width: 198px;
+    height: 198px;
+    margin-right: 0.5em;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: darkgray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#userDetails h5.user_name{
+    order: 2;
+    font-size: 1.3em;
+    margin-top: 0.8em;
+}
+
+#userDetails .user_username{
+    order: 3;
+}
+
+#userDetails p.user_description{
+    order: 4;
+    font-style: italic;
+}
+
+#userDetails .userMail{
+    order: 5;
+}
+
+#userDetails .userPhone{
+    order: 6;
+}
+
+#userDetails .userAddress{
+    order: 7;
+}
+
+#userDetails p{
+    margin-bottom: 0.8em;
+}
+
+#userDetails p.user_description:before, #userDetails p.user_description:after{
+    content: "''";
+}
+
+#userDetails a{
+    color: cadetblue;
+}
+
+#setDetails{
+    grid-column: b / c;
+    grid-row: e / f;
+    margin-left: 2em;
+}
+
+#setDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#setDetails input[type=text], #setDetails input[type="password"]{
     border: 1px solid #f4f0f5;
     color: #000000;
     background-color: #f4f0f5;
     border-radius: 5px; /* See compatibility with older browsers */
-    padding:0.6em 0.6em;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
 }
 
-#settings form input[type=submit]{
-    width: 19em;
-    margin-top: 0.5em;
-    font-size: 1.3em;
-    width: 95%;
+#setDetails input:nth-child(2n){
+    margin-bottom: 1em;
+}
+
+#setDetails #user_description{
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #f4f0f5;
+    color: #000000;
+    background-color: #f4f0f5;
+    border-radius: 5px; /* See compatibility with older browsers */
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+#setDetails button{
+    font-size: 1em;
     font-weight: bold;
     border: 1px solid #f4f0f5;
     color: #ffffff;
     background-color: #efc319;
     border-radius: 5px; /* See compatibility with older browsers */
-    padding:0.6em 0.6em;
+    padding: 0.6em;
+    margin-top: 1em;
 }
 
-
-#bio{
-    width: 19em;
-    margin-top: 0em;
-    margin-bottom: 1.3em;
-    font-size: 1em;
-    width: 95%;
-    border: 1px solid #f4f0f5;
-    color: #000000;
-    background-color: #f4f0f5;
-    border-radius: 5px; /* See compatibility with older browsers */
-    padding:0.6em 0.6em;
+.fa-check{
+    color: green;
 }
 
-#settings h2{
-    margin-bottom: 1.3em;
+.fa-times{
+    color: red;
 }
 
-.settingsHeaders{
-    font-size: 1.5em;
+.modal-messages{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+
+.modal-messages > div{
+    width: 400px;
+    position: relative;
+    margin: 20% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.modal-messages > div h2 {
+    text-align: center;
 }

@@ -11,5 +11,11 @@
     <link rel="stylesheet" href="styles/font-awesome.min.css">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
+    <?php if($_SERVER['PHP_SELF']=='/index.php'){?>
+        <script src="js/homepage.js" defer></script>
+    <?php }?>
+    <?php if($_SERVER['PHP_SELF']=='/settings.php'){?>
+        <script src="js/settings.js" defer></script>
+    <?php }?>
 </head>
 <body>

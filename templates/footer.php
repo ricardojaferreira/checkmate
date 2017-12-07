@@ -11,8 +11,5 @@
         </select>
     </div>
 </footer>
-
-<script src="js/homepage.js"></script>
-
 </body>
 </html>

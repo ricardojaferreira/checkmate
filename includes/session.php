@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    function currentUser($type, $value){
-        $_SESSION[$type]=$value;
+    function setSESSION($name, $value){
+        $_SESSION[$name]=$value;
     }
 ?>

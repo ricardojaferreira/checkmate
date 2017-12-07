@@ -11,6 +11,11 @@
     <div class="divider"></div>
 </div>
 
+<?php if(isset($_SESSION['username'])){ ?>
+<section id="sign-up">
+    <h3>Hello <?=$_SESSION['username']?>!</h3>
+</section>
+<?php }else{?>
 <section id="sign-up">
     <h2>Sign Up for Free</h2>
     <form action="action_signup.php" method="post">
@@ -32,5 +37,13 @@
         </div>
         <input type="submit" value="Sign Up">
     </form>
-    <p class="<?if(isset($_GET[e])){echo 'error-show';}else{echo 'error-hide';}?>">The <?echo $_GET[e]; ?> entered already exists!<p>
+    <p class="<?if(isset($_SESSION['signupError'])){echo 'error-show';}else{echo 'error-hide';}?>"><?echo $_SESSION['signupError']; ?><p>
 </section>
+    <?php }?>
+<?php
+
+if(isset($_SESSION['signupError'])){
+    unset($_SESSION['signupError']);
+}
+
+?>

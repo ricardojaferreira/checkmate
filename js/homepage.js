@@ -1,23 +1,23 @@
-var slogans = document.querySelectorAll('.promo-slogans h1');
+let slogans = document.querySelectorAll('.promo-slogans h1');
 window.setInterval(changeOpacity, 2000);
 
 /*Query the document */
-var userInput = document.querySelector('#username');
-var userChecker = document.querySelector('.checkuser li');
-var passwordInput = document.querySelector('#password');
-var passwordChecker = document.querySelector('.checkpassword');
-var firstCheck = document.querySelector('.first-rule span');
-var secondCheck = document.querySelector('.second-rule span');
-var thirdCheck = document.querySelector('.third-rule span');
-var forthCheck = document.querySelector('.forth-rule span');
+let userInput = document.querySelector('#username');
+let userChecker = document.querySelector('.checkuser li');
+let passwordInput = document.querySelector('#password');
+let passwordChecker = document.querySelector('.checkpassword');
+let firstCheck = document.querySelector('.first-rule span');
+let secondCheck = document.querySelector('.second-rule span');
+let thirdCheck = document.querySelector('.third-rule span');
+let forthCheck = document.querySelector('.forth-rule span');
 
-var passCheck = document.querySelector('.passcheck');
-var userCheck = document.querySelector('.usercheck');
-var passNotCheck = document.querySelector('.passnotcheck');
-var userNotCheck = document.querySelector('.usernotcheck');
+let passCheck = document.querySelector('.passcheck');
+let userCheck = document.querySelector('.usercheck');
+let passNotCheck = document.querySelector('.passnotcheck');
+let userNotCheck = document.querySelector('.usernotcheck');
 
-var goodPass=false;
-var goodUser=false;
+let goodPass=false;
+let goodUser=false;
 
 /***** START: Check User *********/
 
@@ -32,7 +32,7 @@ function clearErrorMessage(){
 }
 
 function checkUserValue(){
-    var found = [];
+    let found = [];
     if(userRule.test(userInput.value)){
         userCheck.style.display='inline';
         userNotCheck.style.display='none';
@@ -68,10 +68,10 @@ function checkUserValue(){
     }
 }
 
-var userRule = /^\w+([\.-]?\w+)*$/;
-var emailRule = /^[a-zA-Z]+([\.-]?\w+)*@([a-zA-Z]+([\.-]?\w)*)+(\.\w{2,4})+$/;
-var notAllowedSymbols = /[!#$%^&*()?\/+"'=]+/;
-var detectArroba = /@/;
+let userRule = /^\w+([\.-]?\w+)*$/;
+let emailRule = /^[a-zA-Z]+([\.-]?\w+)*@([a-zA-Z]+([\.-]?\w)*)+(\.\w{2,4})+$/;
+let notAllowedSymbols = /[!#$%^&*()?\/+"'=]+/;
+let detectArroba = /@/;
 
 userInput.addEventListener('focus',function () {
     if(userChecker.textContent!='') {
@@ -96,10 +96,10 @@ userInput.addEventListener('input', function () {
 /****** START: Check Password ********/
 
 /* password rules */
-var ruleTwo=/[0-9]+/;
-var ruleThreeCapital=/[A-Z]+/;
-var ruleThreeSmall=/[a-z]+/;
-var ruleFour=/[.!@#$%^&*()?_\/+"'=-]+/;
+let ruleTwo=/[0-9]+/;
+let ruleThreeCapital=/[A-Z]+/;
+let ruleThreeSmall=/[a-z]+/;
+let ruleFour=/[.!@#$%^&*()?_\/+"'=-]+/;
 
 passwordInput.addEventListener('focus',function () {
     passwordChecker.style.display='block';
@@ -171,7 +171,7 @@ window.onload=function(){
 
 
 function changeOpacity(){
-    for(var i=0; i<slogans.length; i++){
+    for(let i=0; i<slogans.length; i++){
         if(window.getComputedStyle(slogans[i],null).getPropertyValue("opacity")==1){
             //console.log(i);   //DEBUG
             slogans[i].style.opacity=0;
@@ -184,4 +184,3 @@ function changeOpacity(){
         }
     }
 }
-
