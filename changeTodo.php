@@ -11,16 +11,37 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
+  <?php include_once('includes/init.php');
+
+    $instance = connectDB::getInstance();
+    $dbh = $instance->getConnection();
+
+    $todo_id = $_GET['todo_id'];
+
+
+    $query = "SELECT * FROM todo WHERE todo_id = $todo_id";
+    $stmt = $dbh->prepare($query);
+    $stmt->execute();
+    $this_todo = $stmt->fetchAll();
+
+
+    try {
+      $stmt = $dbh->prepare("SELECT * FROM category JOIN users USING(user_id) WHERE user_username= ? and category_id<> ?");
+      $stmt->execute(array($_SESSION['username'],$id));
+      $categories = $stmt->fetchAll();
+
+    }catch (PDOException $e) {
+      echo $e->getMessage();
+    }
+
+  ?>
+
 <header>
     <img src="images/logo-check-mate.png" alt="Logo" width="188" height="71">
-    <select name="gotolist" id="gotolist">
-        <option value="default" id="default">Go to List</option>
-        <option value="list1" id="list1">List 1</option>
-        <option value="list2" id="list2">List</option>
-    </select>
     <a class='log-out'href="index.php">Log Out</a>
     <a class='search' href="#">
         <i class="fa fa-search" aria-hidden="true"></i>
@@ -32,42 +53,27 @@
 
 <!-- <div class="container"> -->
 
+
+
 <section id="all-lists">
-    <h1>All Lists</h1>
-    <select name="sortby" id="sortby">
-        <option value="defaultsort" id="defaultsort">Sort By</option>
-        <option value="name" id="name">Name</option>
-        <option value="deadline" id="deadline">Deadline</option>
-        <option value="priority" id="priority">Priority</option>
-    </select>
-    <article>
-        <a class='pencil' href="list.html">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-        </a>
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <p>Donec in sagittis lacus. Proin dapibus sagittis finibus.</p>
-        <p>100%</p>
-        <a class='trash' href="#">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-        </a>
-    </article>
-    <article>
-        <a class='pencil' href="list.html">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-        </a>
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <p>Donec in sagittis lacus. Proin dapibus sagittis finibus.</p>
-        <p>850%</p>
-        <a class='trash' href="#">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-        </a>
-    </article>
+
+    <h1><a class='back' href="todos.php?category_id=<?=$_SESSION['category_id']?>"><i class="fa fa-chevron-left" aria-hidden="true"></i></a><?=$this_todo[0]['todo_description']?></h1>
+
+    <div id="todoForm">
+
+      <form action="action_updateTodo.php?todo_id=<?=$todo_id?>" method="post">
+
+          <br><label class='todoDescript'>Description:</label>
+          <input type="text" name="todoDescript" placeholder="<?=$this_todo[0]['todo_description']?>"  id="todoDescript">
+          <br><label class='todoDescript'>Deadline:</label>
+          <input type="date"  name="deadline"  placeholder="<?=$this_todo[0]['todo_deadline']?>" id="deadline">
+          <br><label class='todoDescript'>State:</label>
+          <input type="text" name="state"  placeholder="<?=$this_todo[0]['todo_percentage']?>" id="deadline">
+          <br><input type="submit" value="Save Changes">
+      </form>
+    </div>
+
 </section>
-
-
-
-
-<!-- </div> -->
 
 <footer>
     <p>&copy; 2017 All rights reserved</p>
@@ -82,5 +88,6 @@
         </select>
     </div>
 </footer>
+
 </body>
 </html>

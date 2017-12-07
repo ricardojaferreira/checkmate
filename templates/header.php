@@ -8,7 +8,7 @@
                 $categories=getUserCategories($_SESSION['username']);
                 for($i = 0; $i<count($categories);$i++){
                     ?>
-                    <option value="<?=$categories[$i]['category_name']?>"><?=$categories[$i]['category_name']?></option>
+                    <option value="todos.php?category_id=<?=$categories[$i]['category_id']?>"><?=$categories[$i]['category_name']?></option>
                     <?php
                 }
                 ?>
@@ -33,7 +33,7 @@
                 $categories=getUserCategories($_SESSION['username']);
                 for($i = 0; $i<count($categories);$i++){
                     ?>
-                    <option value="<?=$categories[$i]['category_name']?>"><?=$categories[$i]['category_name']?></option>
+                    <option value="todos.php?category_id=<?=$categories[$i]['category_id']?>"><?=$categories[$i]['category_name']?></option>
                     <?php
                 }
                 ?>
@@ -52,7 +52,7 @@
             $categories=getUserCategories($_SESSION['username']);
             for($i = 0; $i<count($categories);$i++){
                 ?>
-                <option value="<?=$categories[$i]['category_name']?>"><?=$categories[$i]['category_name']?></option>
+                <option value="todos.php?category_id=<?=$categories[$i]['category_id']?>"><?=$categories[$i]['category_name']?></option>
                 <?php
             }
             ?>

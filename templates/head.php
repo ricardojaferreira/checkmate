@@ -17,5 +17,8 @@
     <?php if($_SERVER['PHP_SELF']=='/settings.php'){?>
         <script src="js/settings.js" defer></script>
     <?php }?>
+    <?php if(isset($_SESSION['username'])){?>
+        <script src="js/selects.js" defer></script>
+    <?php }?>
 </head>
 <body>

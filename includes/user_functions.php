@@ -21,10 +21,6 @@
         return $stmt->fetch() !== false;
     }
 
-    function isSignInCorrect($row,$user,$password){
-        echo 'hello';
-    }
-
     function updateTableData($table, $field, $value, $user){
         $instance = connectDB::getInstance();
         $dbh = $instance->getConnection();
@@ -57,7 +53,7 @@
         $userID = getUserValue('user_id', $user);
         $instance = connectDB::getInstance();
         $dbh = $instance->getConnection();
-        $stmt = $dbh->prepare('SELECT category_name FROM category ' .
+        $stmt = $dbh->prepare('SELECT * FROM category ' .
                                             ' WHERE user_id = ?');
         $stmt->execute(array($userID['user_id']));
         return $stmt->fetchAll();
