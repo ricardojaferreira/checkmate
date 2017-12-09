@@ -34,6 +34,10 @@
         $resultplusone = count($result)+1;
         $profilePicFileName = 'images/profile/user'. "_{$resultplusone}.jpg";
 
+        if(file_exists($profilePicFileName)){
+            unlink($profilePicFileName);
+        }
+
         $userPicture_exploded=explode(',', $picture);
         $pictureNoSpaces = str_replace(' ', '+',$userPicture_exploded[1]);
 

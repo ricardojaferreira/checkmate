@@ -202,6 +202,7 @@ function updateUser(){
 
     if(userDetails['error']=='No error'){
         reset(userDetails['imgsrc']);
+        console.log(userDetails['imgsrc']);
         let modal = document.querySelector('.modal-messages');
         modal.style.display="block";
         modal.style.opacity=100;
@@ -239,7 +240,7 @@ function reset(imgsrc = img.src){
     newThirdCheck.style.display='none';
     newForthCheck.style.display='none';
     img.classList.remove('userinteract');
-    img.src=imgsrc;
+    img.src=imgsrc+"?"+ new Date().getTime();;
 }
 
 

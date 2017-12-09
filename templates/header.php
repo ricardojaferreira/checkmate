@@ -13,12 +13,6 @@
                 }
                 ?>
             </select>
-            <div class="header-left">
-                <a class='log-in' href="/action_logout.php">Log Out</a>
-                <a class='settings' href="/settings.php">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                </a>
-            </div>
         <?php }else{?>
         <div class="header-left">
             <a class='log-in' href="/login.php">Log In</a>
@@ -38,12 +32,6 @@
                 }
                 ?>
             </select>
-            <div class="header-left">
-                <a class='log-in' href="/action_logout.php">Log Out</a>
-                <a class='settings' href="/settings.php">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                </a>
-            </div>
     <?php }}?>
     <?php if(strpos($_SERVER['PHP_SELF'],'/settings.php')!==false){ ?>
         <select name="categories" id="categories">
@@ -57,8 +45,23 @@
             }
             ?>
         </select>
+    <?php }?>
+    <?php if(isset($_SESSION['username'])){?>
         <div class="header-left">
             <a class='log-in' href="/action_logout.php">Log Out</a>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <a class='settings' href="/settings.php">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
         </div>
-    <?php }?>
+        <div id="search-modal" class="search-modal-input">
+            <div>
+                <i class="closesearch fa fa-times" aria-hidden="true"></i>
+                <h2>Search Categories</h2>
+                <input type="text" name="search"  id="search" placeholder="search here">
+                <ul class="search-results">
+                </ul>
+            </div>
+        </div>
+    <?php } ?>
 </header>

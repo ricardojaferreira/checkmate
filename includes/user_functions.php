@@ -58,4 +58,15 @@
         $stmt->execute(array($userID['user_id']));
         return $stmt->fetchAll();
     }
+
+    function searchCategory($user, $searchWord){
+        $userID = getUserValue('user_id', $user);
+        $instance = connectDB::getInstance();
+        $dbh = $instance->getConnection();
+        $stmt = $dbh->prepare('SELECT * FROM category ' .
+            ' WHERE user_id = ? AND category_name LIKE ?');
+        $stmt->execute(array($userID['user_id'],"$searchWord%"));
+        return $stmt->fetchAll();
+    }
+
 ?>
